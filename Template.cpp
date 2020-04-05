@@ -22,6 +22,8 @@ using namespace std;
 #define ff first
 #define ss second
 #define endl "\n"
+#define deb(x) cout << #x << "=" << x <<endl
+#define deb(x, y) cout<<#x<<"="<<x<<","<<#y<<"="<<y<<endl
 #define max3(a,b,c) max(a,max(b,c))
 #define min3(a,b,c) min(a,min(b,c))
 #define max4(a,b,c,d) max(a,max3(b,c,d))
