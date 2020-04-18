@@ -1,0 +1,8 @@
+1. Sequence of XOR doesn't matter. The answer will be the same.
+
+2. For each set bit in X, count of 1’s will be same as count of unsetbits in a range. ( Property of XOR )
+   Example - 1 4 5 
+   We are xoring these 3 numbers with 2 and adding. Answer is 16.
+   No of unsetbits in 16 is 4, and number of unsetbits in 1, 4, 5 combined is 4.
+
+
