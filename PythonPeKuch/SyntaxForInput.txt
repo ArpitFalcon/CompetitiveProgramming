@@ -1,0 +1,4 @@
+#For space seperated integers stored in an array.
+
+arr = list(map(int, input().rstrip().split())) 
+
