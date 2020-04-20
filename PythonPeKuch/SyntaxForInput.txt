@@ -13,5 +13,10 @@ except EOFError:
     pass
 
 
+# Input a 2D Array 
+	
+    arr[]
+    for _ in range(6):
+        arr.append(list(map(int, input().rstrip().split())))
 
 
