@@ -2,3 +2,16 @@
 
 arr = list(map(int, input().rstrip().split())) 
 
+
+# To take input till the end of file.
+
+try:
+    while True:
+        line = input()
+        ...
+except EOFError:
+    pass
+
+
+
+
