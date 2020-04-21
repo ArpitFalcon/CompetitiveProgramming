@@ -12,6 +12,6 @@ for (int i = 0; i < n; i++) {
 
 do {
     // Process the permutations
-} while (next_permutation(permutations.begin(), permutations.end());
+} while (next_permutation(permutations.begin(), permutations.end()));
 // next_permtation function converts the array into its next permutation.
 // Changes the existing array.   
