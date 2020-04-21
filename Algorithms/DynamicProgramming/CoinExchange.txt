@@ -1,0 +1,13 @@
+/******************************************
+* AUTHOR : ARPIT *
+* NICK : arpitfalcon *
+* INSTITUTION : BIT MESRA *
+* Harwork is the key to success. *
+******************************************/
+
+// Coin Problem - Minimum no. of coins to achieve a sum. 
+// Can't use Greedy. DP Approach.
+
+// Top Down Approach - Recursion with Memoization.
+
+
