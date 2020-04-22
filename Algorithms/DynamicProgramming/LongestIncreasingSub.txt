@@ -20,6 +20,20 @@ void longestSub(int arr[], int n) {
 
 // We are including the i-th element in couting.
 // Try to solve in O(lg N) time. Find it.
+// In O(lg N) time :
+// Rule 1 = Append if greater.
+// Rule 2 = Replace if smaller.
+int lengthOfLIS(vector<int>& nums) {
+    vector<int>dp;
+    for (int x : nums) {
+        int pos = lower_bound(dp.begin(), dp.end(), x) - dp.begin();
+        if (pos == dp.size()) dp.push_back(x);
+        else dp[pos] = x;
+    }
+    return dp.size();
+}
+
+
 
 // Input -
 // int arr[] = {6, 2, 5, 1, 7, 4, 8, 3};
