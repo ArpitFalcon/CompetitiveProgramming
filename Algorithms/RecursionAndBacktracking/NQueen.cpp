@@ -35,65 +35,64 @@ typedef long double ld;
 
 
 
-bool is_safe(int board[][10], int i, int j, int n){
-    for(int row =0;row<i;row++){
-        if(board[row][j] == 1) return false;
-    }
+bool is_safe(int board[][10], int i, int j, int n) {
+	for (int row = 0; row < i; row++) {
+		if (board[row][j] == 1) return false;
+	}
 
-    int x = i;
-    int y = j;
-    while(x>=0 && y>=0){
-        if(board[x][y] == 1) return false;
-        x--; y--;
-    }
+	int x = i;
+	int y = j;
+	while (x >= 0 && y >= 0) {
+		if (board[x][y] == 1) return false;
+		x--; y--;
+	}
 
-    x = i;
-    y = j;
-    while(x>=0 && y<n){
-        if(board[x][y] == 1) return false;
-        x--; y++;
-    }
+	x = i;
+	y = j;
+	while (x >= 0 && y < n) {
+		if (board[x][y] == 1) return false;
+		x--; y++;
+	}
 
-    return true;
+	return true;
 }
 
-bool n_queen(int board[][10], int i,  int n){
-    if(i==n) return true; 
-    for(int j=0;j<n;j++){
-        if(is_safe(board, i, j, n)){
-            board[i][j] = 1;
-            bool next = n_queen(board, i+1, n);
-            if(next) return true;
-        }
-        board[i][j] = 0;
-    }
-    return false;
+bool n_queen(int board[][10], int i,  int n) {
+	if (i == n) return true;
+	for (int j = 0; j < n; j++) {
+		if (is_safe(board, i, j, n)) {
+			board[i][j] = 1;
+			bool next = n_queen(board, i + 1, n);
+			if (next) return true;
+		}
+		board[i][j] = 0;
+	}
+	return false;
 }
 
 
 int main() {
-    fast;
-    #ifdef _DEBUG
-        freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
+	fast;
+#ifdef _DEBUG
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+#endif
 
 	// your code goes here
-    
-    ll n; cin>>n;
-    int board[10][10] = {0};
-    if(n_queen(board, 0, n)){
-        cout<<"YES"<<endl;
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                cout<<board[i][j]<<" ";
-            }
-            cout<<endl;
-        }
-    }
-    else{
-        cout<<"NO";
-    }
-    return 0;
-}
 
+	ll n; cin >> n;
+	int board[10][10] = {0};
+	if (n_queen(board, 0, n)) {
+		cout << "YES" << endl;
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				cout << board[i][j] << " ";
+			}
+			cout << endl;
+		}
+	}
+	else {
+		cout << "NO";
+	}
+	return 0;
+}
