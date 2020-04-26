@@ -8,6 +8,7 @@
 
 // Segment Tree to find query in a dynamic array (values can change).
 // It can return the query and can modify a value in O(lgN) time.
+// Learn and add the recursive method too.
 
 const int N = 100000;
 int tree[2 * N];
