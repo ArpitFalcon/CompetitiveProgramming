@@ -4,17 +4,21 @@ arr = list(map(int, input().rstrip().split()))
 ````
 
 ## To take input till the end of file.
-````try:
+````
+try:
     while True:
         line = input()
         ...
 except EOFError:
-    pass````
+    pass
+````
 
 
 ## Input a 2D Array 
-    ````arr[]
-    for _ in range(6):
-        arr.append(list(map(int, input().rstrip().split())))````
+````
+arr[]
+for _ in range(6):
+    arr.append(list(map(int, input().rstrip().split())))
+````
 
 
