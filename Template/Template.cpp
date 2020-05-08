@@ -5,6 +5,7 @@
 * Ab m game m hu. *
 ******************************************/
 
+
 #include <bits/stdc++.h>
 using namespace std;
 #define MOD 1000000007
@@ -32,11 +33,20 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long  ull;
 typedef long double ld;
+const double PI  = 3.141592653589793238463;
+
 
 #define forn(i,n) for(ll (i) = 0 ; (i) < (n) ; ++(i))
 #define for1(i,n) for(ll (i) = 1 ; (i) <= (n) ; ++(i))
 #define forr(i,n) for(ll (i) = (n)-1 ; (i)>=0 ; --(i))
 #define forab(i,a,b,c) for(ll (i) = a ; (i) <= (b) ; (i)+=(c))
+
+/*
+__builtin_ffs(x)
+  Number of set bits: __builtin_popcount(x)
+  Number of leading zeroes: __builtin_clz(x)
+  Number of trailing zeroes : __builtin_ctz(x)
+*/
 
 
 int main() {
@@ -47,8 +57,15 @@ int main() {
 #endif
 
 	// your code goes here
-	
-	
 
+
+
+
+
+
+
+#ifndef ONLINE_JUDGE
+	cout << "\nTime Elapsed : " << 1.0 * clock() / CLOCKS_PER_SEC << " s";
+#endif
 	return 0;
 }
