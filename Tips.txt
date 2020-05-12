@@ -5,4 +5,18 @@
    We are xoring these 3 numbers with 2 and adding. Answer is 16.
    No of unsetbits in 16 is 4, and number of unsetbits in 1, 4, 5 combined is 4.
 
+GeeksForGeeks DSA:
+https://drive.google.com/drive/folders/1Q9e7XuGyImIMZGuBzZlfOinYfQ-zlVb5?usp=sharing
+
+Algoexperts System Design:
+https://drive.google.com/file/d/1rdDtx2mxmBjy2YuPPCDY9TnsOB8mhg0p/view
+
+Algoexperts DSA (Torrent):
+https://www.1377x.to/torrent/4301420/Premium-AlgoExpert-Become-an-Algorithms-Expert/
+
+Algoexperts DSA(Drive Link):
+https://drive.google.com/file/d/1tQrEfB_iJEfWyZAzIVvPfIjQv08T5Cp8/view?usp=drivesdk
+
+https://drive.google.com/file/d/1-GIIU9w0XIplucExNwAkOrXqP0ThpKl-/view?usp=drivesdk
+
 
