@@ -4,7 +4,7 @@ files:
   visible: true
   placeholders:
   - offset: 230
-    length: 97
+    length: 96
     placeholder_text: type here
     initial_state:
       length: 9
@@ -106,5 +106,5 @@ status: Unchecked
 feedback:
   message: <html>Local tests passed, please <a href="https://www.coursera.org/learn/algorithmic-toolbox/programming/b66y2/programming-assignment-1-introduction/submission">submit
     to Coursera</a></html>
-  time: Sun, 19 Jul 2020 03:51:28 UTC
+  time: Sun, 19 Jul 2020 03:59:36 UTC
 record: -1
