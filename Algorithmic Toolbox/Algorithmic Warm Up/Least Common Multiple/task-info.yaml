@@ -3,14 +3,14 @@ files:
 - name: lcm.py
   visible: true
   placeholders:
-  - offset: 292
-    length: 9
+  - offset: 366
+    length: 24
     placeholder_text: type here
     initial_state:
       length: 9
       offset: 292
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
   text: |
     # python3
@@ -102,4 +102,8 @@ files:
   learner_created: false
 feedback_link: https://www.coursera.org/learn/algorithmic-toolbox/programming/b66y2/programming-assignment-1-introduction/discussions
 status: Unchecked
+feedback:
+  message: <html>Local tests passed, please <a href="https://www.coursera.org/learn/algorithmic-toolbox/programming/b66y2/programming-assignment-1-introduction/submission">submit
+    to Coursera</a></html>
+  time: Mon, 20 Jul 2020 02:15:42 UTC
 record: -1
