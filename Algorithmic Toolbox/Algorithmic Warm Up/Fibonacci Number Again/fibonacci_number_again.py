@@ -17,7 +17,8 @@ def fibonacci_number_again_naive(n, m):
 def fibonacci_number_again(n, m):
     assert 0 <= n <= 10 ** 18 and 2 <= m <= 10 ** 3
 
-    type here
+
+
 
 
 if __name__ == '__main__':
