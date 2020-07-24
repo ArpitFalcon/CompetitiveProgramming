@@ -4,7 +4,7 @@ files:
   visible: true
   placeholders:
   - offset: 303
-    length: 103
+    length: 105
     placeholder_text: type here
     initial_state:
       length: 9
@@ -45,7 +45,7 @@ files:
       length: 9
       offset: 466
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
   text: |
     import unittest
@@ -107,5 +107,5 @@ status: Unchecked
 feedback:
   message: <html>Local tests passed, please <a href="https://www.coursera.org/learn/algorithmic-toolbox/programming/b66y2/programming-assignment-1-introduction/submission">submit
     to Coursera</a></html>
-  time: Mon, 20 Jul 2020 02:13:51 UTC
+  time: Fri, 24 Jul 2020 03:19:07 UTC
 record: -1

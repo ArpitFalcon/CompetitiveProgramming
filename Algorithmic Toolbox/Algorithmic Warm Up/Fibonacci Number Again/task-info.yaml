@@ -3,15 +3,15 @@ files:
 - name: fibonacci_number_again.py
   visible: true
   placeholders:
-  - offset: 365
-    length: 1
+  - offset: 988
+    length: 0
     placeholder_text: type here
     initial_state:
       length: 9
       offset: 369
     initialized_from_dependency: false
     selected: true
-    status: Unchecked
+    status: Failed
   text: |
     # python3
 
@@ -50,7 +50,7 @@ files:
       offset: 456
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Failed
   text: |
     import unittest
     from itertools import product
@@ -120,5 +120,8 @@ files:
             passed()
   learner_created: false
 feedback_link: https://www.coursera.org/learn/algorithmic-toolbox/programming/b66y2/programming-assignment-1-introduction/discussions
-status: Unchecked
+status: Failed
+feedback:
+  message: Don't just delete task text
+  time: Fri, 24 Jul 2020 03:33:12 UTC
 record: -1

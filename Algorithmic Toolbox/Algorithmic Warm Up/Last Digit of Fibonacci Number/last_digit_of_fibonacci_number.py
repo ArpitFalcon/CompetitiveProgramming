@@ -15,7 +15,7 @@ def last_digit_of_fibonacci_number(n):
 
     arr = [0, 1]
     for i in range(2, n + 1):
-        arr.append(arr[-1] + arr[-2])
+        arr.append(arr[i-1] + arr[i-2])
     return arr[n] % 10
 
 
