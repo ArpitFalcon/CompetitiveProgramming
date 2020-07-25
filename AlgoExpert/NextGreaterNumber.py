@@ -37,5 +37,5 @@ def nextGreaterElement(self, n: int) -> int:
         return ans
 
 
-// LeetCode - https://leetcode.com/problems/next-greater-element-iii/
-// Medium
+# LeetCode - https://leetcode.com/problems/next-greater-element-iii/
+# Medium
