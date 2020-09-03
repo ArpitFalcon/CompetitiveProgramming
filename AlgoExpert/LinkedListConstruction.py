@@ -3,6 +3,7 @@ class DoublyLinkedList:
         self.head = None
         self.tail = None
 
+    # O(1) time | O(1) space
     def setHead(self, node):
         if self.head is None:
             self.head = node
@@ -10,12 +11,14 @@ class DoublyLinkedList:
             return
         self.insertBefore(self.head, node)
 
+    # O(1) time | O(1) space
     def setTail(self, node):
         if self.tail is None:
             self.setHead(node)
             return
         self.insertAfter(self.tail, node)
 
+    # O(1) time | O(1) space
     def insertBefore(self, node, nodeToInsert):
         # If there is only one node then there is nothing to insert.
         if nodeToInsert == self.head and nodeToInsert == self.tail:
@@ -34,6 +37,7 @@ class DoublyLinkedList:
             node.prev.next = nodeToInsert
         node.prev = nodeToInsert
 
+    # O(1) time | O(1) space
     def insertAfter(self, node, nodeToInsert):
         if nodeToInsert == self.head and nodeToInsert == self.tail:
             return
@@ -46,6 +50,7 @@ class DoublyLinkedList:
             node.next.prev = nodeToInsert
         node.next = nodeToInsert
 
+    # O(p) time | O(1) space
     def insertAtPosition(self, position, nodeToInsert):
         # Insert at head.
         if position == 1:
@@ -63,6 +68,7 @@ class DoublyLinkedList:
         else:
             self.setTail(nodeToInsert)
 
+    # O(n) time | O(1) space
     def removeNodesWithValue(self, value):
         node = self.head
         # Traverse the linked list
@@ -73,6 +79,7 @@ class DoublyLinkedList:
             if nodeToRemove.value == value:
                 self.remove(nodeToRemove)
 
+    # O(1) time | O(1) space
     def remove(self, node):
         # Check for HEAD
         if node == self.head:
@@ -85,6 +92,7 @@ class DoublyLinkedList:
         # Remove the bindings (next and prev) properly
         self.removeNodeBindings(node)
 
+    # O(n) time | O(1) space
     def containsNodeWithValue(self, value):
         node = self.head
         # Traverse the linked list to find the node with the value
@@ -93,6 +101,7 @@ class DoublyLinkedList:
         # Return True if node is not none (found).
         return node is not None
 
+    # Helper function to remove the bindings.
     def removeNodeBindings(self, node):
         # Check for head node.
         if node.prev is not None:
