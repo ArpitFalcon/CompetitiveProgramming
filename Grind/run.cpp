@@ -75,21 +75,15 @@ int main()
 #endif
 
     // your code goes here
-    
-    T {
-        // Input
-    string input;
-    cin>>input;
 
-    // Logic
-    int n = input.size();
-    string ans = "";
-    ans.append(input[0]);
-    ans.append((string)(n - 2));
-    ans.append(input[n-1]);
-    
-    // Printing the logic
-    cout<<ans;
+    string s;
+    cin >> s;
+
+    string ans;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (s[i] ==)
     }
 
     return 0;
