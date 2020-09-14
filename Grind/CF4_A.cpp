@@ -75,7 +75,7 @@ int main()
 #endif
 
     // your code goes here
-    
+
     // Input
     int n;
     cin >> n;
