@@ -7,4 +7,3 @@ elif first == second:
     print('0')
 else:
     print('1')
-
