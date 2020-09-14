@@ -76,15 +76,21 @@ int main()
 
     // your code goes here
     
-    // Input
-    int n;
-    cin >> n;
+    T {
+        // Input
+    string input;
+    cin>>input;
 
     // Logic
-    if ((n & 1) || n <= 2)
-        cout << "NO" << endl;
-    else
-        cout << "YES" << endl;
+    int n = input.size();
+    string ans = "";
+    ans.append(input[0]);
+    ans.append((string)(n - 2));
+    ans.append(input[n-1]);
+    
+    // Printing the logic
+    cout<<ans;
+    }
 
     return 0;
 }
