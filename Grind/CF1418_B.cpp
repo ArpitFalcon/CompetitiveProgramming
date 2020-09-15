@@ -81,9 +81,40 @@ int main()
         int n;
         cin >> n;
         vector<int> nums(n);
+        vector<int> locks(n);
+        vector<int> unlockedNums;
+        vector<int> newNums(n);
 
+        // Input
         for (int i = 0; i < n; i++)
             cin >> nums[i];
+
+        for (int i = 0; i < n; i++)
+            cin >> locks[i];
+
+        // Taking out the unlocked nums.
+        for (int i = 0; i < n; i++)
+            if (locks[i] == 0)
+                unlockedNums.push_back(nums[i]);
+
+        // Reverse sort (logic)
+        sort(unlockedNums.begin(), unlockedNums.end(), greater<int>());
+        int ind = 0;
+
+        // Copying to the new array to print (doesn't required)
+        // Could've printed it right there.
+        for (int i = 0; i < n; i++)
+        {
+            if (locks[i] == 0)
+                newNums[i] = unlockedNums[ind++];
+            else
+                newNums[i] = nums[i];
+        }
+
+        // Printing the answer.
+        for (auto num : newNums)
+            cout << num << " ";
+        cout << endl;
     }
 
     return 0;
