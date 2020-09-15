@@ -78,19 +78,24 @@ int main()
 
     T
     {
-        int n;
-        cin >> n;
-        vector<int> nums(n);
-        vector<int> locks(n);
-        vector<int> unlockedNums;
+        long long int x, y, k;
+        cin >> x >> y >> k;
 
-        for (int i = 0; i < n; i++)
-            cin >> nums[i];
+        long long int numTransactions = 0;
+        long long int reqSticks = k * y + k - 1;
 
-        for (int i = 0; i < n; i++)
-            cin >> locks[i];
+        // To get the required number of sticks.
+        numTransactions += reqSticks / (x - 1);
 
-        for (int i = 0; i < n; i++)
+        // Check for left out sticks.
+        if ((reqSticks % (x - 1)) > 0)
+            numTransactions++;
+
+        // Transactions for getting coal.
+        numTransactions += k;
+
+        // Print.
+        cout << numTransactions << endl;
     }
 
     return 0;
