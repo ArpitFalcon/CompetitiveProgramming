@@ -66,9 +66,36 @@ __builtin_ffs(x)
   Number of trailing zeroes : __builtin_ctz(x)
 */
 
-long long int nC2(long long int max_count)
+float bin_search(vector<int> &lanterns, float len)
 {
-    return (max_count * (max_count - 1)) / 2;
+    float low = 0, high = len + 1;
+    float ans = len;
+    int n = lanterns.size();
+    bool flag = true;
+
+    while (high - low < 0.001)
+    {
+        float mid = low + (high - low) / 2;
+        float dist;
+        for (int i = 0; i < n - 1; i++)
+        {
+            dist = (lanterns[i + 1] - lanterns[i]) / 2;
+            if (dist >= mid)
+            {
+                flag = false;
+                break;
+            }
+        }
+
+        if (flag)
+            high = mid;
+        else
+            low = mid;
+
+        ans = mid;
+    }
+
+    return ans;
 }
 
 int main()
@@ -80,27 +107,14 @@ int main()
 #endif
 
     // your code goes here
-    long long int n, m;
-    cin >> n >> m;
+    float n, l;
+    cin >> n >> l;
+    vector<int> lanterns(0, n);
 
-    // Max Calculate
-    long long int max_count = n - m + 1;
-    long long int maxx = nC2(max_count);
+    for (int i = 0; i < n; i++)
+        cin >> lanterns[i];
 
-    // Min calculate
-    long long int min_count = n / m;
-    long long int min_count_add = n % m;
+    cout << bin_search(lanterns, l) << endl;
 
-    long long int minn = 0;
-    for (long long int i = 0; i < min_count_add; i++)
-    {
-        minn += nC2(min_count + 1);
-    }
-    for (long long int i = 0; i < (m - min_count_add); i++)
-    {
-        minn += nC2(min_count);
-    }
-
-    cout << minn << " " << maxx << endl;
     return 0;
 }
