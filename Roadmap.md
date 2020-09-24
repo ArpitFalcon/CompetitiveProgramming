@@ -50,4 +50,5 @@ WAFL - 9262784444
 ### Tasks - 
 - Meeting - 6th Sept - 6 PM
 - Website decide
+- Updates contacts
 - 
