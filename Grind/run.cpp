@@ -66,6 +66,11 @@ __builtin_ffs(x)
   Number of trailing zeroes : __builtin_ctz(x)
 */
 
+long long int nC2(int max_count)
+{
+    return (max_count * (max_count - 1)) / 2;
+}
+
 int main()
 {
     blink
@@ -75,36 +80,27 @@ int main()
 #endif
 
     // your code goes here
+    int n, m;
+    cin >> n >> m;
 
-    int n, m, k;
-    cin >> n >> m >> k;
-    vector<int> players(m);
-    int fedor;
+    // Max Calculate
+    int max_count = n - m - 1;
+    long long int maxx = nC2(max_count);
 
-    for (int i = 0; i < m; i++)
-        cin >> players[i];
+    // Min calculate
+    int min_count = n / m;
+    int min_count_add = n % m;
 
-    cin >> fedor;
-
-    int differences = 0;
-    int potentialFriends = 0;
-    for (int i = 0; i < m; i++)
+    long long int minn = 0;
+    for (int i = 0; i < min_count_add; i++)
     {
-        differences = 0;
-        for (int j = 0; j < n; j++)
-        {
-            int fedorBIT = fedor & (1 << j);
-            int playerBIT = players[i] & (1 << j);
-
-            if (fedorBIT ^ playerBIT)
-                differences++;
-        }
-
-        if (differences <= k)
-            potentialFriends++;
+        minn += nC2(min_count + 1);
+    }
+    for (int i = 0; i < (m - min_count_add); i++)
+    {
+        minn += nC2(min_count);
     }
 
-    cout << potentialFriends;
-
+    cout << minn << " " << maxx << endl;
     return 0;
 }
