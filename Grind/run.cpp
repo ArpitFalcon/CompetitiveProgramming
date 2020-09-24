@@ -66,7 +66,7 @@ __builtin_ffs(x)
   Number of trailing zeroes : __builtin_ctz(x)
 */
 
-long long int nC2(int max_count)
+long long int nC2(long long int max_count)
 {
     return (max_count * (max_count - 1)) / 2;
 }
@@ -80,23 +80,23 @@ int main()
 #endif
 
     // your code goes here
-    int n, m;
+    long long int n, m;
     cin >> n >> m;
 
     // Max Calculate
-    int max_count = n - m - 1;
+    long long int max_count = n - m + 1;
     long long int maxx = nC2(max_count);
 
     // Min calculate
-    int min_count = n / m;
-    int min_count_add = n % m;
+    long long int min_count = n / m;
+    long long int min_count_add = n % m;
 
     long long int minn = 0;
-    for (int i = 0; i < min_count_add; i++)
+    for (long long int i = 0; i < min_count_add; i++)
     {
         minn += nC2(min_count + 1);
     }
-    for (int i = 0; i < (m - min_count_add); i++)
+    for (long long int i = 0; i < (m - min_count_add); i++)
     {
         minn += nC2(min_count);
     }
