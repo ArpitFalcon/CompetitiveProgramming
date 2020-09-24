@@ -66,18 +66,18 @@ __builtin_ffs(x)
   Number of trailing zeroes : __builtin_ctz(x)
 */
 
-float bin_search(vector<int> &lanterns, float len)
+double bin_search(vector<double> &lanterns, double len, int n)
 {
-    float low = 0, high = len + 1;
-    float ans = len;
-    int n = lanterns.size();
+    double low = 0.0, high = len + 1;
+    double ans = len;
     bool flag = true;
+    double mid;
 
-    while (high - low < 0.001)
+    while (high - low > 1e-9)
     {
-        float mid = low + (high - low) / 2;
-        float dist;
-        for (int i = 0; i < n - 1; i++)
+        mid = low + (high - low) / 2;
+        double dist = 0.0;
+        for (int i = 0; i < (n - 1); i++)
         {
             dist = (lanterns[i + 1] - lanterns[i]) / 2;
             if (dist >= mid)
@@ -93,7 +93,13 @@ float bin_search(vector<int> &lanterns, float len)
             low = mid;
 
         ans = mid;
+        flag = true;
     }
+
+    if (lanterns[0] - 0 > ans)
+        ans = lanterns[0] - 0;
+    if (len - lanterns[n - 1] > ans)
+        ans = len - lanterns[n - 1];
 
     return ans;
 }
@@ -107,14 +113,16 @@ int main()
 #endif
 
     // your code goes here
-    float n, l;
+    double l;
+    int n;
     cin >> n >> l;
-    vector<int> lanterns(0, n);
+    vector<double> lanterns(n);
 
     for (int i = 0; i < n; i++)
         cin >> lanterns[i];
 
-    cout << bin_search(lanterns, l) << endl;
+    sort(lanterns.begin(), lanterns.end());
+    cout << setprecision(9) << bin_search(lanterns, l, n) << endl;
 
     return 0;
 }
