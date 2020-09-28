@@ -19,12 +19,15 @@ public:
             cout << num << " ";
     }
 
-    // void replace(int target, int seq[]){
-    //     for(auto it = data.begin(); it!=data.end(); it++){
-    //         if(*it == target)
-    //             data.insert_after(it, seq);
-    //     }
-    // }
+    void replace(int target, vector<int> seq)
+    {
+        auto it = find(data.begin(), data.end(), target);
+        if (it == data.end())
+            return;
+
+        it = data.erase(it);
+        data.insert(it, seq.begin(), seq.end());
+    }
 };
 
 int main()
@@ -34,6 +37,9 @@ int main()
     data_x.insert(10);
     data_x.insert(12);
     data_x.insert(22);
+    data_x.print();
+    cout << endl;
+    data_x.replace(22, {34, 66, 56});
     data_x.print();
 
     return 0;
