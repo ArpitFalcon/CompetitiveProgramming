@@ -66,6 +66,44 @@ __builtin_ffs(x)
   Number of trailing zeroes : __builtin_ctz(x)
 */
 
+double bin_search(vector<double> &lanterns, double len, int n)
+{
+    double low = 0.0, high = len + 1;
+    double ans = len;
+    bool flag = true;
+    double mid;
+
+    while (high - low > 1e-9)
+    {
+        mid = low + (high - low) / 2;
+        double dist = 0.0;
+        for (int i = 0; i < (n - 1); i++)
+        {
+            dist = (lanterns[i + 1] - lanterns[i]) / 2;
+            if (dist >= mid)
+            {
+                flag = false;
+                break;
+            }
+        }
+
+        if (flag)
+            high = mid;
+        else
+            low = mid;
+
+        ans = mid;
+        flag = true;
+    }
+
+    if (lanterns[0] - 0 > ans)
+        ans = lanterns[0] - 0;
+    if (len - lanterns[n - 1] > ans)
+        ans = len - lanterns[n - 1];
+
+    return ans;
+}
+
 int main()
 {
     blink
@@ -75,13 +113,13 @@ int main()
 #endif
 
     // your code goes here
-    long long int d, n;
-    cin >> d >> n;
+    int a, b;
+    cin >> a >> b;
 
-    if (n == 100)
-        cout << (n + 1) * pow(100, d);
+    if (a > 8 || b > 8)
+        cout << ":(" << endl;
     else
-        cout << n * pow(100, d) << endl;
+        cout << "Yay!";
 
     return 0;
 }
