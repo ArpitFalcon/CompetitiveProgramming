@@ -75,17 +75,45 @@ int main()
 #endif
 
     // your code goes here
-    long long int d, n;
-    cin >> d >> n;
+    long long n, m, maxn;
+    cin >> n >> m;
 
-    long long int mult = 1;
-    for (int i = 0; i < d; i++)
-        mult *= 100;
+    vector<vector<long long int>> v(n + 3, vector<long long int>(3));
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            cin >> v[i][j];
+        }
+    }
 
-    if (n % 100 == 0)
-        cout << (n + 1) * mult;
-    else
-        cout << n * mult;
+    for (int i = 0; i < 8; i++)
+    {
+        vector<long long> vec;
 
+        for (int j = 1; j <= n; j++)
+        {
+            long long S = 0;
+
+            for (int k = 0; k < 3; k++)
+            {
+                if ((i / (1 << k)) % 2 == 0)
+                    S += v[j][k];
+                else
+                    S -= v[j][k];
+
+                vec.push_back(S);
+            }
+        }
+
+        sort(vec.begin(), vec.end());
+        reverse(vec.begin(), vec.end());
+        long long ans = 0;
+        for (int j = 0; j < m; j++)
+            ans += vec[j];
+        maxn = max(maxn, ans);
+    }
+
+    cout << maxn << endl;
     return 0;
 }
