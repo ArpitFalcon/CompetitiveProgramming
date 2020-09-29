@@ -75,24 +75,18 @@ int main()
 #endif
 
     // your code goes here
-    long long int num, n;
-    cin >> num;
-    n = num;
-    long long int sum = 0;
+    int ans = 0;
+    string s;
+    cin >> s;
 
-    while (num)
+    for (int i = 0; i < s.size(); i++)
     {
-        sum += num % 10;
-        num /= 10;
-    }
-    if (n % sum == 0)
-    {
-        cout << "Yes";
-    }
-    else
-    {
-        cout << "No";
+        if (s[i] == '+')
+            ans++;
+        else
+            ans--;
     }
 
+    cout << ans;
     return 0;
 }

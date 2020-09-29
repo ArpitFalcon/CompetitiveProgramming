@@ -10,4 +10,4 @@ for i in range(len(s)):
 if running >= 4:
     print('YES')
 else:
-    print('NO')  
+    print('NO')   

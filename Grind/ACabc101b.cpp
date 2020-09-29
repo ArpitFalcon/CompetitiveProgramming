@@ -85,6 +85,7 @@ int main()
         sum += num % 10;
         num /= 10;
     }
+
     if (n % sum == 0)
     {
         cout << "Yes";
