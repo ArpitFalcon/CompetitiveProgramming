@@ -66,24 +66,6 @@ __builtin_ffs(x)
   Number of trailing zeroes : __builtin_ctz(x)
 */
 
-int calcWindows(int len, int k)
-{
-    if (len == 1)
-        return 0;
-
-    if (k >= len)
-        return 1;
-
-    if (k == 2)
-        return len - 1;
-
-    int quo = len / (k - 1);
-    if (quo == 1 && k < len)
-        return 2;
-
-    return quo;
-}
-
 int main()
 {
     blink
@@ -102,22 +84,14 @@ int main()
         cin >> data[i];
     }
 
-    int posLowest = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (data[i] == 1)
-        {
-            posLowest = i;
-            break;
-        }
-    }
-
-    int oneLen = posLowest + 1;
-    int twoLen = n - posLowest;
-
     int res = 0;
-    res += calcWindows(oneLen, k);
-    res += calcWindows(twoLen, k);
+    n -= k;
+    res++;
+
+    res += n / (k - 1);
+
+    if (n % (k - 1) != 0)
+        res++;
     cout << res;
 
     return 0;
