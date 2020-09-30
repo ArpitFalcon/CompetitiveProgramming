@@ -93,32 +93,9 @@ int main()
 #endif
 
     // your code goes here
-    int k, n;
-    cin >> n >> k;
-    vector<int> data(n);
 
-    for (int i = 0; i < n; i++)
-    {
-        cin >> data[i];
-    }
-
-    int posLowest = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (data[i] == 1)
-        {
-            posLowest = i;
-            break;
-        }
-    }
-
-    int oneLen = posLowest + 1;
-    int twoLen = n - posLowest;
-
-    int res = 0;
-    res += calcWindows(oneLen, k);
-    res += calcWindows(twoLen, k);
-    cout << res;
+    long long int k;
+    cin >> k;
 
     return 0;
 }
