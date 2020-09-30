@@ -94,29 +94,28 @@ int main()
 
     // your code goes here
 
-    vin;
-
-    int sadness = 0;
-    int sum = 0;
-
-    for (int i = 1; i <= n; i++)
+    int n, m;
+    cin >> n >> m;
+    unordered_map<string, string> languages;
+    for (int i = 0; i < m; i++)
     {
-        sum += v[i - 1] - i;
+        string a, b;
+        cin >> a >> b;
+        languages[a] = b;
     }
 
-    if (sum < 0)
+    string temp;
+    for (int i = 0; i < n; i++)
     {
+        cin >> temp;
+        auto it = languages.find(temp);
+        if (it->first.size() > it->second.size())
+            cout << it->second << " ";
+        else
+            cout << it->first << " ";
     }
 
-    float avg = (float)sum / n;
-    deb2(sum, n);
-    deb(avg);
+    for (int i = 0; i < n; i++)
 
-    for (int i = 1; i <= n; i++)
-    {
-        sadness += abs(v[i - 1] - (avg + i));
-    }
-
-    cout << sadness;
-    return 0;
+        return 0;
 }
