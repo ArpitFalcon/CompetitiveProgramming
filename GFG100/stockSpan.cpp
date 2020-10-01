@@ -95,5 +95,6 @@ int main()
     {
         vin;
         stockSpan(v, n);
+        cout << endl;
     }
 }
