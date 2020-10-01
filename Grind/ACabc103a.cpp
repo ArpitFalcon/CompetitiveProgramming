@@ -66,7 +66,7 @@ __builtin_ffs(x)
   Number of trailing zeroes : __builtin_ctz(x)
 */
 
-int findMedian(vector<ll> &arr, int n)
+ll findMedian(vector<ll> &arr, ll n)
 {
     sort(arr.begin(), arr.end());
 
@@ -74,7 +74,7 @@ int findMedian(vector<ll> &arr, int n)
         return arr[n / 2];
     else
     {
-        int mid = n / 2;
+        ll mid = n / 2;
         return (arr[mid - 1] + arr[mid]) / 2;
     }
 }
@@ -88,29 +88,18 @@ int main()
 #endif
 
     // your code goes here
-    vin;
 
-    ll sadness = 0;
-    ll sum = 0;
-    vector<ll> newArr;
+    ll a[3];
+    cin >> a[0] >> a[1] >> a[2];
 
-    for (int i = 1; i <= n; i++)
+    sort(a, a + 3);
+    ll ans = 0;
+
+    for (int i = 1; i < 3; i++)
     {
-        newArr.push_back(v[i - 1] - i);
+        ans += a[i] - a[i - 1];
     }
+    cout << ans << endl;
 
-    int b = findMedian(newArr, newArr.size());
-
-    for (int i = 1; i <= n; i++)
-    {
-        sadness += abs(v[i - 1] - (b + i));
-    }
-    int sadness_pseudo = 0;
-    for (int i = 1; i <= n; i++)
-    {
-        sadness_pseudo += abs(v[i - 1] - (b + 1 + i));
-    }
-
-    cout << min(sadness, sadness_pseudo);
     return 0;
 }

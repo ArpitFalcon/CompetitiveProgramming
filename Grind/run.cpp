@@ -66,22 +66,17 @@ __builtin_ffs(x)
   Number of trailing zeroes : __builtin_ctz(x)
 */
 
-int calcWindows(int len, int k)
+int findMedian(vector<ll> &arr, int n)
 {
-    if (len == 1)
-        return 0;
+    sort(arr.begin(), arr.end());
 
-    if (k >= len)
-        return 1;
-
-    if (k == 2)
-        return len - 1;
-
-    int quo = len / (k - 1);
-    if (quo == 1 && k < len)
-        return 2;
-
-    return quo;
+    if (n & 1)
+        return arr[n / 2];
+    else
+    {
+        int mid = n / 2;
+        return (arr[mid - 1] + arr[mid]) / 2;
+    }
 }
 
 int main()
@@ -93,29 +88,29 @@ int main()
 #endif
 
     // your code goes here
+    vin;
 
-    int n, m;
-    cin >> n >> m;
-    unordered_map<string, string> languages;
-    for (int i = 0; i < m; i++)
+    ll sadness = 0;
+    ll sum = 0;
+    vector<ll> newArr;
+
+    for (int i = 1; i <= n; i++)
     {
-        string a, b;
-        cin >> a >> b;
-        languages[a] = b;
+        newArr.push_back(v[i - 1] - i);
     }
 
-    string temp;
-    for (int i = 0; i < n; i++)
+    int b = findMedian(newArr, newArr.size());
+
+    for (int i = 1; i <= n; i++)
     {
-        cin >> temp;
-        auto it = languages.find(temp);
-        if (it->first.size() > it->second.size())
-            cout << it->second << " ";
-        else
-            cout << it->first << " ";
+        sadness += abs(v[i - 1] - (b + i));
+    }
+    int sadness_pseudo = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        sadness_pseudo += abs(v[i - 1] - (b + 1 + i));
     }
 
-    for (int i = 0; i < n; i++)
-
-        return 0;
+    cout << min(sadness, sadness_pseudo);
+    return 0;
 }
