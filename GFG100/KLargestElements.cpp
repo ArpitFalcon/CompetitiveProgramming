@@ -15,6 +15,7 @@ public:
         priority_queue<int, vector<int>, greater<int>> pq(arr, arr + k);
 
         // Using Min Heap, at any time the heap will contain the max k elements seen at that time.
+        // O(k + (n - k) * log k)
         for (int i = k; i < n; i++)
         {
             if (pq.top() < arr[i])
