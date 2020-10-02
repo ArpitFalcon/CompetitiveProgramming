@@ -26,4 +26,4 @@ for i in range(0, len(s)):
 if flag:
     print('AC')
 else:
-    print('WA') 
+    print('WA')
