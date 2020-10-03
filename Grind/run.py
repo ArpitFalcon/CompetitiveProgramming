@@ -1,29 +1,16 @@
 s = input()
+n = len(s)
 
-flag = True
+for i in range(n - 1):
+    if int(s[i]) % 2 == 0:
+        s[i], s[n - 1] = s[n - 1], s[i]
 
-if s[0] == 'A':
-    flag = False
 
-res = 0
-for i in range(2, len(s) - 1):
-    if s[i] == 'C':
-        res += 1
+for i in range(len(s) - 1):
+    if int(s[i]) % 2 == 0 and int(s[i]) < int(s[n-1]):
+        s[i], s[n-1] = s[n-1], s[i]
 
-    if res >= 2:
-        flag = False
-        break
-
-res = 0
-for i in range(0, len(s)):
-    if s[i].isupper():
-        res += 1
-    
-    if res > 2:
-        flag = False
-        break
-
-if flag:
-    print('AC')
+if int(s[n-1] % 2):
+    print(-1)
 else:
-    print('WA') 
+    print(s)
