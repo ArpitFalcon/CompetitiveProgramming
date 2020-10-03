@@ -75,18 +75,29 @@ int main()
 #endif
 
     // your code goes here
+    vector<int> values(26);
+    string s;
+    int k;
+    cin >> s >> k;
 
-    int r, x, y, xprime, yprime;
-    cin >> r >> x >> y >> xprime >> yprime;
-
-    double dis = sqrt((xprime - x) * (xprime - x) + (yprime - y) * (yprime - y));
-    int res = 0;
-    while (dis > 0)
+    int maxx = INT_MIN;
+    for (int i = 0; i < 26; i++)
     {
-        dis -= (2 * r);
-        res++;
+        cin >> values[i];
+        maxx = max(maxx, values[i]);
     }
 
+    ll res = 0;
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        res += values[s[i] - 'a'] * (i + 1);
+    }
+
+    for (int i = s.size() + 1; i < k + s.size() + 1; i++)
+    {
+        res += maxx * i;
+    }
     cout << res << endl;
 
     return 0;
