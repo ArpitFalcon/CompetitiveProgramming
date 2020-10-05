@@ -76,19 +76,36 @@ int main()
 
     // your code goes here
 
-    ll n;
+    int x, y;
+    cin >> x >> y;
+    int n;
     cin >> n;
-    ll res = 0;
-    res += 2 * n - 1;
-    ll currHeight = 0;
-    while (n--)
-    {
-        ll temp;
-        cin >> temp;
-        res += abs(currHeight - temp);
-        currHeight = temp;
-    }
 
-    cout << res;
+    vector<int> res(10);
+    res[1] = x;
+    res[2] = y;
+
+    // Generate the cycle.
+    for (int i = 3; i <= 6; i++)
+    {
+        res[i] = (res[i - 1] - res[i - 2]);
+    }
+    res[0] = res[6];
+
+    // Taking the element out of the cycle.
+    int ans = res[n % 6];
+
+    if (ans < 0)
+    {
+        while (ans < 0)
+        {
+            ans = MOD + ans;
+        }
+        cout << ans;
+    }
+    else
+    {
+        cout << ans % MOD;
+    }
     return 0;
 }
