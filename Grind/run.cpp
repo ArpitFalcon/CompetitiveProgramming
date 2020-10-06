@@ -8,10 +8,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define MOD 1000000007
-#define vll vector<ll>
-#define vvll vector<vll>
-#define pll pair<ll, ll>
-#define vpll vector<pll>
 #define vin                    \
     ll n;                      \
     cin >> n;                  \
@@ -34,10 +30,7 @@ using namespace std;
 #define aout                   \
     for (ll i = 0; i < n; i++) \
     cout << a[i] << " "
-#define pb push_back
-#define mp make_pair
-#define ff first
-#define ss second
+
 #define endl "\n"
 #define deb(x) cout << #x << "=" << x << endl
 #define deb2(x, y) cout << #x << "=" << x << "," << #y << "=" << y << endl
@@ -54,11 +47,6 @@ typedef unsigned long long ull;
 typedef long double ld;
 const double PI = 3.141592653589793238463;
 
-#define forn(i, n) for (ll(i) = 0; (i) < (n); ++(i))
-#define for1(i, n) for (ll(i) = 1; (i) <= (n); ++(i))
-#define forr(i, n) for (ll(i) = (n)-1; (i) >= 0; --(i))
-#define forab(i, a, b, c) for (ll(i) = a; (i) <= (b); (i) += (c))
-
 /*
 __builtin_ffs(x)
   Number of set bits: __builtin_popcount(x)
@@ -70,42 +58,15 @@ int main()
 {
     blink
 #ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
+    freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
 
     // your code goes here
 
-    int x, y;
-    cin >> x >> y;
-    int n;
-    cin >> n;
+    int a, b;
+    cin >> a >> b;
+    cout << a*b;
 
-    vector<int> res(10);
-    res[1] = x;
-    res[2] = y;
 
-    // Generate the cycle.
-    for (int i = 3; i <= 6; i++)
-    {
-        res[i] = (res[i - 1] - res[i - 2]);
-    }
-    res[0] = res[6];
-
-    // Taking the element out of the cycle.
-    int ans = res[n % 6];
-
-    if (ans < 0)
-    {
-        while (ans < 0)
-        {
-            ans = MOD + ans;
-        }
-        cout << ans;
-    }
-    else
-    {
-        cout << ans % MOD;
-    }
-    return 0;
 }
