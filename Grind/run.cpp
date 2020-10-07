@@ -8,29 +8,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define MOD 1000000007
-#define vin                    \
-    ll n;                      \
-    cin >> n;                  \
-    vector<ll> v(n);           \
-    for (ll i = 0; i < n; i++) \
-    cin >> v[i]
-#define vout                   \
-    for (ll i = 0; i < n; i++) \
-    cout << v[i] << " "
-#define T     \
-    ll t = 1; \
-    cin >> t; \
-    while (t--)
-#define ain                    \
-    ll n, k;                   \
-    cin >> n >> k;             \
-    ll a[n];                   \
-    for (ll z = 0; z < n; z++) \
-    cin >> a[z]
-#define aout                   \
-    for (ll i = 0; i < n; i++) \
-    cout << a[i] << " "
-
+#define vin ll n; cin >> n; vector<ll> v(n); for (ll i = 0; i < n; i++) cin >> v[i]
+#define vout for (ll i = 0; i < n; i++) cout << v[i] << " "
+#define T ll t = 1; cin >> t; while (t--)
+#define ain ll n, k; cin >> n >> k; ll a[n]; for (ll z = 0; z < n; z++) cin >> a[z]
+#define aout for (ll i = 0; i < n; i++) cout << a[i] << " "
 #define endl "\n"
 #define deb(x) cout << #x << "=" << x << endl
 #define deb2(x, y) cout << #x << "=" << x << "," << #y << "=" << y << endl
