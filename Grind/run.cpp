@@ -64,13 +64,5 @@ int main()
 
     // your code goes here
 
-    string s, t;
-    cin >> s >> t;
-
-
-
-
-
-
 
 }
