@@ -45,6 +45,13 @@ int main()
 #endif
 
     // your code goes here
+    vector<int> alpha;
+    alpha = {1, 2, 5, 56, 23};
+    auto it = alpha.begin();
 
+    it++;
+    it++;
+    auto res = alpha.erase(it);
+    cout << *res;
 
 }
