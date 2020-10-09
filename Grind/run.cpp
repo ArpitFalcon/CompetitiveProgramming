@@ -45,13 +45,22 @@ int main()
 #endif
 
     // your code goes here
-    vector<int> alpha;
-    alpha = {1, 2, 5, 56, 23};
-    auto it = alpha.begin();
 
-    it++;
-    it++;
-    auto res = alpha.erase(it);
-    cout << *res;
+    int n, s, t;
+    cin >> n >> s >> t;
+    vector<int> data(n + 1);
+
+    for (int i = 1; i <= n; ++i)
+        cin >> data[i];
+
+    int step = 0;
+    while (s != t and data[s] != 0) {
+        int temp = data[s];
+        data[s] = 0;
+        s = temp;
+        step += 1;
+    }
+
+    cout << (s == t) ? step : -1;
 
 }

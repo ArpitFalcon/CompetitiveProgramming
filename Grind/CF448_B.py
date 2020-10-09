@@ -4,7 +4,7 @@ def dsRequired(s, t):
 	# If Suffix Automaton
 	temp = 0
 	for i in range(len(s)):
-		if s[i] == t[temp]:
+		if temp < len(t) and s[i] == t[temp]:
 			temp+=1
 	if temp == len(t):
 		return "automaton"
@@ -33,7 +33,7 @@ def main():
 	s = input()
 	t = input()
  
-	print(dsRequired(s, t))  
+	print(dsRequired(s, t))
  
  
 if __name__ == '__main__':
