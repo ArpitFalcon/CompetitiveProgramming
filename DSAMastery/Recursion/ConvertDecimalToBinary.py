@@ -1,14 +1,9 @@
 def decimalToBinary(testVariable) :
-	if testVariable == 1:
-		return [1]
-	elif testVariable == 0:
-		return [0]
+	if testVariable <= 1:
+		return str(testVariable)
 
-	ans = []
-	ans = decimalToBinary(testVariable // 2)
-	ans.append(testVariable % 2)
-	return ans
+	return decimalToBinary(testVariable // 2) + decimalToBinary(testVariable % 2)
 
 
-testVariable = 64
+testVariable = 10
 print(decimalToBinary(testVariable))
