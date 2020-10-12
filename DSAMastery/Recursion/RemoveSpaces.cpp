@@ -24,10 +24,28 @@ void removeSpaces(string &s, int index, int len) {
 	removeSpaces(s, index + 1, len);
 }
 
+
+void removeSpacesAnother(string &s, int index) {
+	if (s.size() == 0)
+		return;
+
+	if (index == s.size())
+		return;
+
+	if (s[index] == ' ') {
+		s = s.substr(0, index) + s.substr(index + 1, s.size());
+
+		removeSpacesAnother(s, index);
+	}
+
+	removeSpacesAnother(s, index + 1);
+}
+
 int main() {
 	string s = "Hello World Heyy";
 
 	cout << s << endl;
-	removeSpaces(s, 0, s.length());
+	// removeSpaces(s, 0, s.length());
+	removeSpacesAnother(s, 0);
 	cout << s << endl;
 }
