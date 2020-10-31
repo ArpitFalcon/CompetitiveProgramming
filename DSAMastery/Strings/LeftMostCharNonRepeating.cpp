@@ -15,5 +15,5 @@ int leftMostNonRepeating (string str, int n) {
 		if (index[i] >= 0)
 			res = min(res, index[i]);
 
-	return res;
+	return res == INT_MAX ? -1 : res;
 }
