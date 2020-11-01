@@ -11,5 +11,12 @@ int lexRank (string str) {
 	for (int i = 1; i < 256; i++)
 		count[i] = count[i] + count[i - 1];
 
-	for (int )
+	for (int i = 0; i < n; i++) {
+		mal = mal / (n - i);
+		rank = rank + count[str[i] - 1] * mal;
+
+		for (int j = str[i]; j < 256; j++)
+			count[j]--;
 	}
+	return rank;
+}
