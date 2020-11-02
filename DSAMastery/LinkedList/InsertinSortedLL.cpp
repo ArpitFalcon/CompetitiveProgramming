@@ -1,5 +1,5 @@
 Node* insertSorted (Node* head, int data) {
-	Node newNode = new Node(data);
+	Node* newNode = new Node(data);
 
 	if (head == NULL)
 		return head;
