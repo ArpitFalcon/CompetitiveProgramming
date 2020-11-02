@@ -23,6 +23,9 @@ Node* insertAtEnd (Node* head, int x) {
 	Node* temp = new Node(x);
 	Node* curr = head;
 
+	if (head == NULL)
+		return temp;
+
 	while (curr->next != NULL)
 		curr = curr->next;
 
