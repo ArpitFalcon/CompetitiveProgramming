@@ -3,7 +3,7 @@
 Node* removeDup (Node* head) {
 	Node* curr = head;
 
-	while (curr->next != NULL) {
+	while (curr != NULL and curr->next != NULL) {
 		if (curr->next->data == curr->data) {
 			curr->next = curr->next->next;
 		} else {
