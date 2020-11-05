@@ -90,4 +90,20 @@ void iterativeInorder(Node *root) {
 }
 
 
-//
+// Iterative Pre Order Traversal
+void iterativePreorder(Node *root) {
+	if (root == NULL)
+		return;
+
+	stack<Node *> st;
+	st.push(root):
+
+		while (st.empty() == false) {
+		Node *curr = st.top();
+		cout << curr->key << " ";
+		st.pop();
+
+		if (curr->right) st.push(curr->right);
+		if (curr->left) st.push(curr->left);
+	}
+}
