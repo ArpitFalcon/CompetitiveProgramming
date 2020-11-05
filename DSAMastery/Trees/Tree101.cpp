@@ -46,3 +46,12 @@ int sizeOfTree(Node *root) {
 
 	return 1 + sizeOfTree(root->left) + sizeOfTree(root->right);
 }
+
+
+// Maximum in a Binary Tree
+int maxOfTree(Node *root) {
+	if (root == NULL)
+		return INT_MIN;
+
+	return max(root->key, max(maxOfTree(root->left), maxOfTree(root->right)));
+}
