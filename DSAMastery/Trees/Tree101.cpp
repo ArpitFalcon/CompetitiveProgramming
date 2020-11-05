@@ -55,3 +55,39 @@ int maxOfTree(Node *root) {
 
 	return max(root->key, max(maxOfTree(root->left), maxOfTree(root->right)));
 }
+
+
+// Height of a Binary Tree
+int heightOfTree(Node *root) {
+	if (root == NULL)
+		return 0;
+
+	return 1 + max(heightOfTree(root->left), heightOfTree(root->right));
+}
+
+
+// Iterative Inorder Traversal
+void iterativeInorder(Node *root) {
+	// If no node is passed
+	if (root == NULL)
+		return;
+
+	// Stack to maintain the call stack
+	stack<Node *> st;
+
+
+	Node *curr = root;
+	while (curr != NULL or st.empty() != true) {
+		while (curr != NULL) {
+			st.push(curr);
+			curr = curr->left;
+		}
+
+		curr = st.top(); st.pop();
+		cout << curr->key << " ";
+		curr = curr->right;
+	}
+}
+
+
+//
