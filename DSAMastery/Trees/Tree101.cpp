@@ -13,7 +13,7 @@ struct Node {
 }
 
 
-// Depth First = Inorder, Preorder, Postorder
+// Depth First Traversal = Inorder, Preorder, Postorder
 void inorderTraversal(Node *root) {
 	if (root != NULL) {
 		inorderTraversal(root->left);
@@ -36,4 +36,13 @@ void postorderTraversal(Node *root) {
 		postorderTraversal(root->right);
 		cout << root->key << " ";
 	}
+}
+
+
+// Size of a given Binary Tree
+int sizeOfTree(Node *root) {
+	if (root == NULL)
+		return 0;
+
+	return 1 + sizeOfTree(root->left) + sizeOfTree(root->right);
 }
