@@ -25,5 +25,37 @@ class MinHeap {
 	}
 
 
+	// O(Height of Tree) Time
+	void minHeapify(int i) {
+		int lt = left(i), rt = right(i);
+		int smallest = i;
+
+		if (lt < size and arr[lt] < arr[i])
+			smallest = lt;
+		if (rt < size and arr[rt] < arr[smallest])
+			smalest = rt;
+
+		if (smallest != r) {
+			swap(arr[i], arr[smallest])
+			minHeapify(smallest);
+		}
+	}
+
+
+	// Extract Minimum element
+	int extractMin() {
+		if (size == 0)
+			return INT_MAX;
+
+		if (size == 1) {
+			size--;
+			return arr[0];
+		}
+
+		swap(arr[0], arr[size - 1]);
+		size--;
+		minHeapify(0);
+		return arr[size];
+	}
 }
 
