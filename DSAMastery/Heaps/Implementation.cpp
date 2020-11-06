@@ -74,5 +74,12 @@ class MinHeap {
 		decreaseKey(i, INT_MIN);
 		extractMin();
 	}
-}
 
+
+	// Build Heap - Given random array, arrange it in min heap.
+	// O(N) Time
+	void buildHeap() {
+		for (int i = (size - 2) / 2; i >= 0; i--)
+			minHeapify(i);
+	}
+}
