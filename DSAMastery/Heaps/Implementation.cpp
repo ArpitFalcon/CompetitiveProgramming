@@ -57,5 +57,22 @@ class MinHeap {
 		minHeapify(0);
 		return arr[size];
 	}
+
+
+	// Decrease or change the value of an element
+	void decreaseKey(int i, int x) {
+		arr[i] = x;
+		while (i != 0 and arr[parent] > arr[i]) {
+			swap(arr[i], arr[parent]);
+			i = parent(i);
+		}
+	}
+
+
+	// Delete an element at index i
+	void deleteAtIndex(int i) {
+		decreaseKey(i, INT_MIN);
+		extractMin();
+	}
 }
 
