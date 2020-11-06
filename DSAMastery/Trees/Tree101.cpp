@@ -103,6 +103,7 @@ void iterativePreorder(Node *root) {
 		cout << curr->key << " ";
 		st.pop();
 
+		// Reversed order to have the left child on top.
 		if (curr->right) st.push(curr->right);
 		if (curr->left) st.push(curr->left);
 	}
