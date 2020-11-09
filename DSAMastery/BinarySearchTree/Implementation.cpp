@@ -83,3 +83,48 @@ Node* insertIterative(Node *root, int x) {
 
 	return root;
 }
+
+
+// Helper function to get successor for delete
+Node *getSuccessor(Node *curr) {
+	curr = curr->right;
+	while (curr != NULL and curr->left != NULL)
+		curr = curr->left;
+
+	return curr;
+}
+
+
+// Delete Operation
+Node *delNode(Node* root, int x) {
+	if (root == NULL) return root;
+
+	if (root->key > x)
+		root->left = delNode(root->left, x);
+	else if (root->key < x)
+		root->right = delNode(root->right, x);
+	// If we found the node to be deleted
+	else {
+		// If left node is not present
+		if (root->left == NULL) {
+			Node *temp = root->right;
+			delete(root);
+			return temp;
+		}
+		// If right node is not present
+		else if (root->right == NULL) {
+			Node *temp = root->left;
+			delete(root);
+			return temp;
+		}
+		// If both the nodes are present
+		else {
+			// Find the leftmost right value.
+			Node *succ = getSuccessor(root);
+			root->key = succ->key;
+			root->right = delNode(root->right, succ->key);
+		}
+	}
+
+	return root;
+}
