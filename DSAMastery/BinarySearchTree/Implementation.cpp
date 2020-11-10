@@ -120,6 +120,7 @@ Node *delNode(Node* root, int x) {
 		// If both the nodes are present
 		else {
 			// Find the leftmost right value.
+			// The just greater value.
 			Node *succ = getSuccessor(root);
 			root->key = succ->key;
 			root->right = delNode(root->right, succ->key);
@@ -128,3 +129,4 @@ Node *delNode(Node* root, int x) {
 
 	return root;
 }
+
