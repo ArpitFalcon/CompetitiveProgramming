@@ -18,6 +18,10 @@ void DFSRecursive(vector<int> adj[], int u, bool visited[], stack<int> &sortedNu
 void topologicalSort(vector<int> adj[], int v) {
 	stack<int> sortedNums;
 
+	bool visited[v];
+	for (int i = 0; i < v; i++)
+		visited[i] = false;
+
 	for (int i = 0; i < v; i++)
 		if (visited[u] != true)
 			DFSRecursive(adj, i, visited, sortedNums);
