@@ -63,3 +63,21 @@ void BFSDin(vector<int> adj[], int v) {
 		if (visited[i] == false)
 			BFS(adj, v, i, visited);
 }
+
+
+// Number of islands in a graph -
+// Number of disconnected graphs in a graph.
+int BFSDin(vector<int> adj[], int v) {
+	int count = 0;
+	bool visited[v + 1];
+	for (int i = 0; i < v; i++)
+		visited[i] = false;
+
+	// Print the vertice if it's not visited yet
+	for (int i = 0; i < v; i++)
+		if (visited[i] == false) {
+			BFS(adj, v, i, visited);
+			count++;
+		}
+	return count;
+}
