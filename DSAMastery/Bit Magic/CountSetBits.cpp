@@ -11,6 +11,7 @@ void countBits(int n) {
 
 
 // O(set bit count)
+// Brian Kerningam's Algorithm - Switch off the last set bit.
 void countBits(int n) {
 	int res = 0;
 	while (n > 0) {
