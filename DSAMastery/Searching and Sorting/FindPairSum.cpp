@@ -17,3 +17,14 @@ bool search(int arr[], int n, int target) {
 
 	return false;
 }
+
+
+bool searchTriplet(int arr[], int n, int target) {
+	for (int i = 0; i < n; i++) {
+		// A little modification in search function, we are providing the first index.
+		if (search(a, i + 1, n - 1, x - a[i]))
+			return true;
+	}
+
+	return false;
+}
